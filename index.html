@@ -50,6 +50,7 @@
     <nav class="navbar navbar-expand fixed-bottom" id="bottom-nav">   
 
       <ul class="nav navbar-nav" id="bottom-left">
+        
         <a href="https://www.instagram.com/violetfivel/" target="_blank"><i class="fa fa-instagram"></i></a>
         <a href="https://www.facebook.com/fiveltattoos/" target="_blank"><i class="fa fa-facebook-official"></i></a>
 
@@ -57,22 +58,13 @@
 
       <ul class="nav navbar-nav" id="bottom-center">
         
-        
-        <a class="nav-link" href="#">Contact</a>
-        
-<!--
-        <a href="#" class="nav-link link-black">Blackwork</a>
-
-        <a href="#" class="nav-link link-color">Color</a>
-
-        <a href="#" class="nav-link link-paintings">Paintings</a>
--->
+        <a class="nav-link link-contact" href="#">Contact</a>
 
       </ul>
 
       <ul class="nav navbar-nav" id="bottom-right">  
 
-        <a class="nav-link" href="#">Etsy</a>
+        <a class="nav-link" href="https://www.etsy.com/shop/VioletPaintings" target="_blank">Etsy</a>
 
       </ul>
 
@@ -80,45 +72,77 @@
     
     <div class="container-fluid" id="main-container">
       
-      <section id="modal" class="w3-modal">
+      <section id="image-modal" class="w3-modal">
         
-        <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+
         
-        <div class="w3-modal-content w3-animate-zoom" id="modal-content"> 
+        <div class="w3-modal-content" id="image-modal-content"> 
         </div>
         
       </section>
       
-      <section class="row" id="welcome">
+      <section class="row mx-auto" id="welcome">
 
-        <div class="col-12 text-center">
-          <img class="welcome-image img-fluid" src="lib/images/hand-thistle.png" data-toggle="collapse" data-target="#dropdown-nav">
+        <div class="col-12 text-center welcome-image-dark" id="welcome-image">
         </div>
-
+        
+        <div class="col-12 text-center" id="welcome-nav">
+          <ul class="navbar-nav">
+            <a class="nav-link link-color" href="#">Color</a>
+            <a class="nav-link link-black" href="#">Blackwork</a>
+            <a class="nav-link link-paintings" href="#">Paintings</a>
+          </ul>  
+        </div>
+        
       </section>
 
       <section class="row gallery" id="section-color">
-        <div class="col-12">
-          <h1>Color</h1>
+        <div class="col-12" data-toggle="collapse" data-target="#dropdown-nav">
+          <h1 class="gallery-title">Color</h1>
         </div>
-        <div class="row gallery" id="gallery-color">
+        <div class="row" id="gallery-color">
         </div>
       </section>
       
       <section class="row gallery" id="section-blackwork">
-        <div class="col-12">
-          <h1>Blackwork</h1>
+        <div class="col-12" data-toggle="collapse" data-target="#dropdown-nav">
+          <h1 class="gallery-title">Blackwork</h1>
         </div>
-        <div class="row gallery" id="gallery-blackwork">
+        <div class="row" id="gallery-blackwork">
         </div>
       </section>
       
       <section class="row gallery" id="section-paintings">
-        <div class="col-12">
-          <h1>Paintings</h1>
+        <div class="col-12" data-toggle="collapse" data-target="#dropdown-nav">
+          <h1 class="gallery-title">Paintings</h1>
         </div>
-        <div class="row gallery" id="gallery-paintings">
+        <div class="row" id="gallery-paintings">
         </div>
+      </section>
+      
+      <section class="row align-content-center" id="contact">
+        
+        <div class="col-12 text-center">
+          <img class="" src="lib/images/violet-fivel-profile.jpg" alt="Violet Fivel">
+        </div>
+        
+        <div class="col-12 contact-text">
+            <p class="">
+              Violet Fivel utilizes vibrant color combinations and bold lines for all of her artwork. Based in Baltimore, she completed her Tattoo apprenticeship in the beginning of 2003 and began watercolor painting in 2007. Her artwork reflects heavily on traditional aspects of tattooing, and her unique perspective of beauty is integrated into her compositions. An ongoing focus of her craftsmanship has been designing Folk Art.
+              She hopes her imagery enables you to see a more beautiful world.
+            </p>
+        </div>
+
+        <div class="col-12 contact-text">
+          <p>
+            Visit Violet at <a href="http://readstreettattoo.net/home.html" target="_blank">Read Street Tattoo Parlor</a>.<br> She's available Mondays, Wednesdays, Thursdays, Fridays and Sundays.
+          </p>
+          <p class="d-inline">
+            <a href="tel:1-410-523-4657"><i class="fa fa-phone align-middle" aria-hidden="true"></i>(410) 523 - 4657</a>
+          </p>
+        </div>
+      
+      
       </section>
 
     </div>

@@ -35,14 +35,13 @@ h3 {
 }
 
 a {
-  font-size: 1.4rem;
   color: #2a6084;
   transition: color .5s;
 }
 
 a:hover {
   text-decoration: underline;
-  color: black;
+  color: violet;
 }
 
 .nav-item {
@@ -53,6 +52,10 @@ a:hover {
   font-size: 2.4rem;
   letter-spacing: .25rem;
   cursor: pointer;
+}
+
+.navbar a {
+    font-size: 1.4rem;
 }
 
 .nav-link {
@@ -71,7 +74,7 @@ a:hover {
 
 .fa {
   font-size: 1.4rem;
-  padding: .5rem;
+  padding: 0 .5rem;
   color: #2a6084;
   transition: color .5s;
 }
@@ -86,36 +89,78 @@ a:hover {
     ===================
 */ 
 
+html, 
+body {
+    height: 100%;
+}
+
 body {
   background-color: rgb(248,248,255);
 }
 
 #main-container {
-  margin: 68px 0 48px 0;
-  padding: 0 2rem;
+  position: relative;
+  height: 100%;
+  padding: 68px 1rem 48px 1rem;
 }
 
 #main-container .navbar {
   margin: 0;
 }
 
+.row {
+  margin: 0;
+}
+
 #welcome {
+  position: relative;
   display: none;
+  height: 100%;
+  background-color: #011624;
+  border-radius: 8px;
+  max-width: 840px;
+  cursor: pointer;
 }
 
 #welcome div {
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
 
-#welcome img {
- position: relative;
-  top: 100%;
-  transform: translateY(-90%);
+#welcome-nav ul {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   max-height: 70vh;
-  cursor: pointer;
   transition: opacity .4s;
 }
 
+.welcome-image-dark {
+  background: url(../images/hand-thistle-round.png) no-repeat center center;
+  background-size: contain;
+}
+
+.welcome-image-light {
+  background: url(../images/hand-thistle-round-light.png) no-repeat center center;
+  background-size: contain;
+}
+
+#welcome-nav {
+  display: none;
+}
+
+#welcome-nav ul a {
+  font-size: 5vh;
+  margin-bottom: 2rem;
+  font-variant: small-caps;
+}
+
+/*  
+    ===================
+    Nav
+    ===================
+*/ 
 
 #top-nav {
   display: flex;
@@ -128,13 +173,16 @@ body {
 }
 
 #dropdown-nav {
-  background-color: rgba(248,248,255,0.5);
-  z-index: 1;
   padding-bottom: 1rem;
 }
 
 #dropdown-nav .nav-link {
-  padding: 0.2rem;
+  font-weight: 100;
+  font-variant: small-caps;
+  font-size: 1.8rem;
+  letter-spacing: .1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 #bottom-nav {
@@ -160,12 +208,17 @@ body {
 
 /*
   
-  Gallery and Carousel 
+  Gallery
 
 */
 
 .gallery {
   display: none;
+  padding-bottom: 1rem;
+}
+
+.gallery-title {
+  cursor: pointer;
 }
 
 .gallery-image {
@@ -175,7 +228,6 @@ body {
   padding: 1rem;
   margin: 1rem 0;
   cursor: pointer;
-  
 }
 
 .gallery-image img {
@@ -190,7 +242,7 @@ body {
   z-index:3;
   display:none;
   position:fixed;
-  padding: 1rem;
+  margin: 0;
   left:0;top:0;bottom:0;
   width:100%;
   height:100%;
@@ -199,12 +251,11 @@ body {
 }
 
 .w3-modal-content{
-  margin:auto;
-  position:relative;
+  position: relative;
+  padding: 0 1rem;
+  max-width: 640px;
   top: 50%;
-  transform: translateY(-60%);
-  padding: 0;
-  outline: 0;
+  transform: translateY(-50%);
 }
 
 .modal-img {
@@ -212,27 +263,35 @@ body {
   height: auto;
 }
 
+
+/*
+    ===================
+    Contact
+    ===================
+*/
+
+#contact {
+  display: none;
+  padding-bottom: 4rem;
+  background: linear-gradient(to bottom, rgba(248, 248, 255, 1) 0%, rgba(248, 248, 255, 0.8) 50%, rgba(248,248,255, 1) 100%), url(../images/hand-thistle.png) no-repeat center center;
+}
+
+.contact-text {
+  text-align: center;
+  padding: 0 1rem ;
+}
+
+#contact img {
+  max-width: 200px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
 /*  
     ===================
     Media Sizing
     ===================
 */ 
-
-@media (min-width: 376px) {
-  .w3-modal-content {
-    top: 25%;
-    transform: translateY(-25%);
-    padding: 0;
-    width: 640px;
-  }
-  .modal-img {
-    max-width: 100%;
-    height: auto;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
 
 @media (min-width: 768px) {
   .navbar-toggler {
@@ -242,8 +301,12 @@ body {
     font-size: 4.2rem;
   }
   #main-container {
-    margin-top: 110px;
-    margin-bottom: 70px;
+    padding-top: 110px;
+    padding-bottom: 80px;
+    height: 100%;
+  }
+  .gallery {
+    padding-bottom: 2rem;
   }
   h3 {
     font-size: 2.4rem;
@@ -260,16 +323,37 @@ body {
   #welcome img {
     cursor:pointer;
   }
-  .w3-modal-content {
-    height: 80%;
-    width: 90%;
+  #contact {
+    height: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 10%;
+  }
+  .w3-modal-content{
+    position: relative;
+    padding: 0 1rem;
+    height: 70vmin;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .modal-img {
     position: relative;
-    top: 0;
+    height: 100%;
+    width: auto;
     left: 50%;
     transform: translateX(-50%);
-    max-height: 100%;
-    width: auto;
+  }
+  
+}
+
+@media (min-width: 992px) {
+  #contact {
+    padding: 0 25%;
+  }
+  #contact div {
+    margin: 1rem 0;
   }
 }
